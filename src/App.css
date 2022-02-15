@@ -1,38 +1,249 @@
-.App {
-  text-align: center;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: Montserrat, sans-serif;
+    color: #1a1b1f;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400    ;    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+    text-decoration: none;
+    color: #1a1b1f;
+}
+
+/* Header Styles */
+
+.header-main {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-link {
+    text-decoration: underline;
+    font-size: 45px;
+    padding: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo-link {
+        display: none;
+    }
   }
+
+.search-container {
+    width: 100%;
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-container input {
+    height: 30px;
+    align-self: center;
+    border: 1px solid #1a1b1f;
+    margin: auto;
+    width: 5    0%;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-bar {
+    position: absolute;
+    right: 0;
+    display: flex;
+    padding: 30px 20px;
+    box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar ul li {
+    padding: 20px 10px;
+    width: 100px;
+}
+
+/*.nav-link:hover {
+    background-color: #1a1b1f;
+    color: #dddddd;
+    border-radius: 2px;
+    transition-duration: 0.4s;
+}
+*/
+
+.cart-link {
+    background-color: #1a1b1f;
+    font-weight: bold;
+    color: #dddddd;
+    font-size: 20px;
+    padding: 12px;
+}
+
+/* Main Styles */
+
+    /* Banner Styles */
+
+main {
+    margin-bottom: 80px;
+}
+
+.banner-container {
+background-image: url("../resources/background.png");
+background-color: #cccccc;
+height: 500px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+.banner-text {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #dddddd;
+}
+
+.banner-text h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.banner-text button {
+    background-color: #1a1b1f;
+    color: #dddddd;
+    border: 0.5px solid #dddddd;
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+    margin-top: 50px;
+    border-radius: 1px;    
+}
+
+.banner-text button:hover {
+    color: #1a1b1f;
+    background-color: #dddddd;
+    transition-duration: 0.4s;
+}
+
+    /* Popular Items Styles */
+
+.popular-container {
+    margin:0 auto;
+    margin-top: 80px;
+    width: 80%;
+    text-align: center;
+    display: grid;
+}
+
+.featured-container {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px 50px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "item1 item2"
+      "item3 item4";
+}
+
+@media only screen and (max-width: 768px) {
+    .featured-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.featured-item {
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.featured-item:hover {
+    border: 1px solid #1a1b1f;
+}
+
+.featured-item h3 {
+    vertical-align: top;
+    color: #1a1b1f;
+}
+  
+#item1 { 
+    grid-area: item1;
+    background-image: url("../resources/ps5.jpg");
+}
+  
+#item2 { 
+    grid-area: item2;
+    background-image: url("../resources/jordans.jpg"); 
+}
+  
+#item3 { 
+    grid-area: item3;
+    background-image: url("../resources/DDJ-XP2.jpg"); 
+}
+  
+#item4 { 
+    grid-area: item4;
+    background-image: url("../resources/samsungtv.jpeg"); 
+}
+  
+
+/* Footer Styles */
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    background-color: #bdbdbd;
+    height: 250px;
+}
+
+.designer-box {
+    display: grid;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.designer-box p {
+    font-weight: bold;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    margin: 0 auto;
+}
+
+.contact-box {
+    display: grid;
+    padding: 30px 30px 0 30px;
+}
+
+.contact-data {
+    display: flex;
+}
+
+.contact-data svg {
+    height: 45px;
+    width: 45px;
+    margin-right: 5px;
+}
+
+.contact-data p {
+    color: #1a1b1f;
+    font-weight: 600;
 }
