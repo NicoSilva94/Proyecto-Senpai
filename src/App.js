@@ -1,4 +1,5 @@
 import Home from "./pages/home";
+import Products from "./pages/products";
 
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component= {Home} />
+          <Route  path="/Products" component= {Products} />
         </Switch>
         <Footer />
       </Router>      
